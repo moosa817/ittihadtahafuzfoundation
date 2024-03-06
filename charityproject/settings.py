@@ -29,7 +29,13 @@ SECRET_KEY = "django-insecure-(f^pen8fq6(-wpaf3b77*u8n^(9x!-horawloqw(cd$hz6)+c1
 DEBUG = True if getenv("DEBUG") == "True" else False
 
 
-ALLOWED_HOSTS = ["192.168.18.123", "localhost", "127.0.0.1"]
+ALLOWED_HOSTS = [
+    "192.168.18.123",
+    "localhost",
+    "127.0.0.1",
+    "ittihadtahafuzfoundation.vercel.app",
+    "*.vercel.app",
+]
 
 
 # Application definition
