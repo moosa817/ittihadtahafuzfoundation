@@ -8,7 +8,7 @@
     "routes": [
         {
             "src": "/(.*)",
-            "dest": "chatroom/wsgi.py"
+            "dest": "charityproject/wsgi.py"
         }
     ]
 }
