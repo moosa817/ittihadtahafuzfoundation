@@ -1,0 +1,276 @@
+{%extends 'base.html'%}
+{%load static%}
+{%block title%}Ittihad Tahafuz Foundation{%endblock%}
+
+
+{%block content%}
+
+<div id="default-carousel" class="relative" data-carousel="static">
+  <!-- Carousel wrapper -->
+  <div class="relative overflow-hidden h-80 sm:h-96 md-[100vh] lg:h-[100vh]">
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- item 1 -->
+    <div
+      class="hidden duartion-700 ease-in-out  bg-[url('https://d2nf2tnwikupdj.cloudfront.net/static/imgs/slide1.png')] bg-cover saturate-50"
+      alt="" data-carousel-item>
+
+      <div class="relative top-1/4 md:top-1/3">
+        <div class="flex justify-center  flex-col text-white font-bold items-center">
+
+          <div data-aos="zoom-in" class="w-3/4 ml-10 md:ml-20 text-xl md:text-4xl">
+            Empowering lives
+            through compassion: ITTihad Tahafuz Foundation (ITF) - Uniting for a Secure Future
+          </div>
+          <div class="flex justify-center">
+            <button type="button"
+              class="text-indigo-400 text-lg hover:text-white rounded-lg font-thin bg-transparent sm:text-2xl hover:bg-gradient-to-br from-purple-600  border border-indigo-500 md:my-10 md:px-10 md:py-5 text-center mb-2 p-2 mx-4 duration-200">Read
+              More</button>
+            <button type="button"
+              class="text-white hover:scale-110 text-lg sm:text-2xl bg-gradient-to-br from-purple-600 to-blue-500 border border-purple-500 font-thin rounded-lg md:my-10 md:px-10 md:py-5 text-center mb-2 p-2">Donate</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- item 2 -->
+    <div
+      class="hidden duration-700 ease-in-out bg-[url('https://d2nf2tnwikupdj.cloudfront.net/static/imgs/slide2.png')] bg-cover saturate-50"
+      alt="" data-carousel-item>
+
+      <div class="absolute top-[30%] md:top-[45%] md:left-[45%] left-[40%] z-50">
+        <div class="relative  md:right-20 right-5 text-xl md:text-[4rem] text-white font-bold">About Us</div>
+
+        <button type="button"
+          class="text-white bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl text-sm font-medium md:my-10 md:px-10 md:py-5 text-center mb-2 p-2">About</button>
+      </div>
+    </div>
+
+    <!-- item 3 -->
+    <div
+      class="hidden duration-700 ease-in-out bg-[url('https://d2nf2tnwikupdj.cloudfront.net/static/imgs/slide3.png')] bg-cover grayscale"
+      alt="" data-carousel-item>
+
+      <div class="absolute top-[30%] md:top-[45%] md:left-[45%] left-[40%] z-50">
+        <div class="relative  md:right-20 right-5 text-xl md:text-[4rem] text-white font-bold">Contact US</div>
+
+        <button type="button"
+          class="text-white bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl text-sm font-medium md:my-10 md:px-10 md:py-5 text-center mb-2 p-2">Contact</button>
+      </div>
+    </div>
+
+    <!-- Slider indicators -->
+    <div class="sm:absolute z-30 sm:flex space-x-3 -translate-x-1/2 bottom-5 left-1/2 hidden">
+      <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 1"
+        data-carousel-slide-to="0"></button>
+      <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 2"
+        data-carousel-slide-to="1"></button>
+      <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 3"
+        data-carousel-slide-to="2"></button>
+    </div>
+    <!-- Slider controls -->
+    <button type="button"
+      class="absolute top-0 left-0 z-30 sm:flex items-center justify-center h-full sm:px-4 px-1 cursor-pointer group focus:outline-none"
+      data-carousel-prev>
+      <span
+        class="inline-flex items-center justify-center w-8 h-8 rounded-full sm:w-10 sm:h-10 bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+        <svg aria-hidden="true" class="w-5 h-5 text-white sm:w-6 sm:h-6 dark:text-gray-800" fill="none"
+          stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+        </svg>
+        <span class="sr-only">Previous</span>
+      </span>
+    </button>
+    <button type="button"
+      class=" absolute top-0 right-0 z-30 sm:flex items-center justify-center h-full sm:px-4 px-1 cursor-pointer group focus:outline-none"
+      data-carousel-next>
+      <span
+        class="inline-flex items-center justify-center w-8 h-8 rounded-full sm:w-10 sm:h-10 bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+        <svg aria-hidden="true" class="w-5 h-5 text-white sm:w-6 sm:h-6 dark:text-gray-800" fill="none"
+          stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+        </svg>
+        <span class="sr-only">Next</span>
+      </span>
+    </button>
+  </div>
+
+
+
+
+
+</div>
+
+<div class="flex justify-center mt-5">
+  <div>
+    <img src="{%static 'imgs/logo2.jpg' %}" class="w-full h-24 sm:h-36" alt="">
+
+  </div>
+</div>
+<div class="my-20 container mx-auto ">
+
+  <div class="flex flex-col items-center justify-center ">
+    <span class="text-4xl font-semibold text-indigo-500 lato-regular ml-4">Our Achievements and Contributions</span>
+    <hr class="w-64 h-1 mx-auto my-4 bg-gray-100 border-0 rounded md:my-4 dark:bg-gray-700">
+  </div>
+
+
+  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
+
+    <div class="mx-5 my-3" data-aos="fade-right">
+      <div class="rounded-2xl shadow-lg h-72 w-full relative">
+        <div
+          class="absolute inset-0 bg-[url('https://d2nf2tnwikupdj.cloudfront.net/static/imgs/services/rations.jpg')] bg-cover rounded-2xl"
+          style="filter: contrast(75%);"></div>
+        <div class="relative h-full flex justify-center items-center flex-col">
+          <span class="text-indigo-100 text-3xl font-bold opacity-100">Rations Distributed</span>
+          <span class="text-white opacity-100 text-4xl font-extrabold">2500+</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="mx-5 my-3" data-aos="fade-right">
+
+      <div class="rounded-2xl shadow-lg h-72 w-full relative">
+        <div
+          class="absolute inset-0 bg-[url('https://d2nf2tnwikupdj.cloudfront.net/static/imgs/services/cargo.jpg')] bg-cover rounded-2xl"
+          style="filter: contrast(75%);"></div>
+        <div class="relative h-full flex justify-center items-center flex-col">
+          <span class="text-indigo-100 text-3xl font-bold opacity-100">Cargo Van</span>
+          <span class="text-white opacity-100 text-4xl font-extrabold">1000+</span>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="mx-5 my-3" data-aos="fade-right">
+      <div class="rounded-2xl shadow-lg h-72 w-full relative">
+        <div
+          class="absolute inset-0 bg-[url('https://d2nf2tnwikupdj.cloudfront.net/static/imgs/services/dastarkhuan.jpg')] bg-cover rounded-2xl"
+          style="filter: contrast(75%);"></div>
+        <div class="relative h-full flex justify-center items-center flex-col">
+          <span class="text-indigo-100 text-3xl font-bold opacity-100">Dastarkhuan</span>
+          <span class="text-white opacity-100 text-4xl font-extrabold">100+</span>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="mx-5 my-3" data-aos="fade-right">
+      <div class="rounded-2xl shadow-lg h-72 w-full relative">
+        <div
+          class="absolute inset-0 bg-[url('https://d2nf2tnwikupdj.cloudfront.net/static/imgs/services/treeplantation.jpg')] bg-cover rounded-2xl"
+          style="filter: contrast(75%);"></div>
+        <div class="relative h-full flex justify-center items-center flex-col">
+          <span class="text-indigo-100 text-3xl font-bold opacity-100">Tree's Planted</span>
+          <span class="text-white opacity-100 text-4xl font-extrabold">700+</span>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="mx-5 my-3" data-aos="fade-right">
+      <div class="rounded-2xl shadow-lg h-72 w-full relative">
+        <div
+          class="absolute inset-0 bg-[url('https://d2nf2tnwikupdj.cloudfront.net/static/imgs/services/healthcare.jpg')] bg-cover rounded-2xl"
+          style="filter: contrast(75%);"></div>
+        <div class="relative h-full flex justify-center items-center flex-col">
+          <span class="text-indigo-100 text-3xl font-bold opacity-100">Health Care</span>
+          <span class="text-white opacity-100 text-4xl font-extrabold">100+</span>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="mx-5 my-3" data-aos="fade-right">
+      <div class="rounded-2xl shadow-lg h-72 w-full relative">
+        <div
+          class="absolute inset-0 bg-[url('https://d2nf2tnwikupdj.cloudfront.net/static/imgs/services/marriage.jpg')] bg-cover rounded-2xl"
+          style="filter: contrast(75%);"></div>
+        <div class="relative h-full flex justify-center items-center flex-col">
+          <span class="text-indigo-100 text-3xl font-bold opacity-100">Poor Girls Marriage</span>
+          <span class="text-white opacity-100 text-4xl font-extrabold">200+</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="mx-5 my-3" data-aos="fade-right">
+      <div class="rounded-2xl shadow-lg h-72 w-full relative">
+        <div
+          class="absolute inset-0 bg-[url('https://d2nf2tnwikupdj.cloudfront.net/static/imgs/services/ambulance.jpg')] bg-cover rounded-2xl"
+          style="filter: contrast(75%);"></div>
+        <div class="relative h-full flex justify-center items-center flex-col">
+          <span class="text-indigo-100 text-3xl font-bold opacity-100">Ambulance</span>
+          <span class="text-white opacity-100 text-4xl font-extrabold">100+</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="mx-5 my-3" data-aos="fade-right">
+      <div class="rounded-2xl shadow-lg h-72 w-full relative">
+        <div
+          class="absolute inset-0 bg-[url('https://d2nf2tnwikupdj.cloudfront.net/static/imgs/services/drugs.jpg')] bg-cover rounded-2xl"
+          style="filter: contrast(75%);"></div>
+        <div class="relative h-full flex justify-center items-center flex-col">
+          <span class="text-indigo-100 text-3xl font-bold opacity-100">Drugs Addicted Recovery</span>
+          <span class="text-white opacity-100 text-4xl font-extrabold">450+</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="mx-5 my-3" data-aos="fade-right">
+      <div class="rounded-2xl shadow-lg h-72 w-full relative">
+        <div
+          class="absolute inset-0 bg-[url('https://d2nf2tnwikupdj.cloudfront.net/static/imgs/services/water.jpg')] bg-cover rounded-2xl"
+          style="filter: contrast(75%);"></div>
+        <div class="relative h-full flex justify-center items-center flex-col">
+          <span class="text-indigo-100 text-3xl font-bold opacity-100">Water Filtration Plant</span>
+          <span class="text-white opacity-100 text-4xl font-extrabold">20+</span>
+        </div>
+      </div>
+    </div>
+
+
+
+  </div>
+
+
+</div>
+
+<div
+  class="my-10 bg-[url('https://d2nf2tnwikupdj.cloudfront.net/static/imgs/bg.jpg')] bg-cover h-96 bg-center contrast-125 flex-col  opacity-70 bg-fixed flex justify-center items-center">
+
+  <div data-aos="fade-up" class="text-center text-5xl text-white font-extrabold font-serif">
+    Learn more about what we do
+  </div>
+
+  <div>
+    <a href="/services">
+      <button type="button"
+        class="text-white border border-indigo-400 hover:bg-gradient-to-br from-green-400 my-4 hover:scale-110 duration-100 More focus:ring-4 focus:outline-none focus:ring-green-200 dark:focus:ring-green-800 font-medium rounded-lg px-5 py-2.5 text-center me-2 mb-2 text-xl p-5 bg-transparent font-mono">Learn
+        More
+  </div>
+  </a>
+</div>
+
+
+<div class="container">
+  <div class="grid grid-cols-1 sm:grid-cols-2">
+    <div></div>
+
+  </div>
+
+</div>
+
+{%endblock%}

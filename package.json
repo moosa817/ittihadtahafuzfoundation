@@ -1,0 +1,12 @@
+{
+  "scripts": {
+    "watch": "npx tailwindcss -i ./static/css/src/input.css -o ./static/css/dist/output.css --watch",
+    "copy": "cp 'node_modules/flowbite/dist/flowbite.min.js' 'static/js/flowbite.min.js'",
+    "build":"npm run copy && npm run watch"
+  },
+  "dependencies": {
+    "copy-webpack-plugin": "^11.0.0",
+    "flowbite": "^1.6.3",
+    "tailwindcss": "^3.2.4"
+  }
+}
