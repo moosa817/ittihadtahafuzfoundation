@@ -34,6 +34,7 @@ ALLOWED_HOSTS = [
     "localhost",
     "127.0.0.1",
     "ittihadtahafuzfoundation.vercel.app",
+    "www.ittihadtahafuzfoundation.org",
     "*.vercel.app",
 ]
 
