@@ -1,23 +1,10 @@
 {%extends 'base.html'%}
 {%block title%}Contact Us{%endblock%}
 {%block title2%}
-
-
-
 Contact Us
-
-
-
-
-
-
-
-
-
-
-
 {%endblock%}
 
+{%load static%}
 {%block content%}
 
 <div class="container mx-auto my-10">
@@ -26,34 +13,6 @@ Contact Us
 
 
 
-  <div id="error-box"
-    class="hidden p-4 mb-4 text-sm text-red-800 border border-red-300 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400 dark:border-red-800"
-    role="alert">
-    <svg aria-hidden="true" class="flex-shrink-0 inline w-5 h-5 mr-3" fill="currentColor" viewBox="0 0 20 20"
-      xmlns="http://www.w3.org/2000/svg">
-      <path fill-rule="evenodd"
-        d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z"
-        clip-rule="evenodd"></path>
-    </svg>
-    <span class="sr-only">Info</span>
-    <div id="error">
-
-    </div>
-  </div>
-
-  <div id="success-box"
-    class="hidden p-4 mb-4 text-sm text-green-800 border border-green-300 rounded-lg bg-green-50 dark:bg-gray-800 dark:text-green-400 dark:border-green-800"
-    role="alert">
-    <svg aria-hidden="true" class="flex-shrink-0 inline w-5 h-5 mr-3" fill="currentColor" viewBox="0 0 20 20"
-      xmlns="http://www.w3.org/2000/svg">
-      <path fill-rule="evenodd"
-        d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z"
-        clip-rule="evenodd"></path>
-    </svg>
-    <span class="sr-only">Info</span>
-    <div id="success">
-    </div>
-  </div>
 
 
   <div class="mb-20"></div>
@@ -66,15 +25,10 @@ Contact Us
     <div class="w-full lg:mx-10" data-aos="fade-right">
 
       <div class="flex justify-center text-4xl font-semibold text-indigo-600">Send us a message</div>
-      <form class="border p-20 shadow-xl my-10" method="POST">
-        <div class="relative z-0 w-full mb-6 group">
-          <input type="email" name="floating_email" id="email"
-            class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
-            placeholder=" " required />
-          <label for="floating_email"
-            class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Email
-            address</label>
-        </div>
+      <form class="border p-20 shadow-xl my-10" id="ContactForm" method="POST">
+
+        {% csrf_token %}
+
         <div class="grid md:grid-cols-2 md:gap-6">
           <div class="relative z-0 w-full mb-6 group">
             <input type="text" name="name" id="name"
@@ -94,13 +48,33 @@ Contact Us
           </div>
         </div>
 
+        <div class="grid md:grid-cols-2 md:gap-6">
+          <div class="relative z-0 w-full mb-6 group">
+            <input type="email" name="floating_email" id="email"
+              class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer "
+              placeholder=" " required />
+            <label for="floating_email"
+              class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6 ">Email
+              address</label>
+          </div>
+          <div class="relative z-0 w-full mb-6 group">
+            <input type="text" name="floating_subject" id="subject"
+              class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+              placeholder=" " required />
+            <label for="floating_subject"
+              class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Subject</label>
+          </div>
+        </div>
         <textarea id="message" rows="4"
           class="block p-2.5 w-full text-sm text-gray-900 border-none bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
           placeholder="Write your thoughts here..."></textarea>
 
+        <div id="contact-error" class="text-xs mt-4 hidden text-red-500 font-bold">
+          hey some error message
+        </div>
 
 
-        <button type="button" id="submit_main"
+        <button type="submit" id="submit_main"
           class="text-white my-5 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 w-full bg-gradient-to-br from-purple-600 to-blue-500 ">Send</button>
       </form>
     </div>
@@ -191,10 +165,6 @@ Contact Us
 
 
 </div>
+{%include 'components.html'%}
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"
-  integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ=="
-  crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
-<script src="/static/js/main.js"></script>
 {%endblock%}

@@ -21,3 +21,8 @@ $(`#${page} li`).addClass('bg-indigo-400');
 
 
 $('#time').text(new Date().getFullYear())
+
+
+setInterval(() => {
+    $('[name="fadeOut"]').fadeOut();
+}, 20000);

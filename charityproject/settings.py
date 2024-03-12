@@ -13,6 +13,7 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 from pathlib import Path
 from os import getenv
 import dotenv
+import dj_database_url
 
 dotenv.load_dotenv()
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -27,6 +28,7 @@ SECRET_KEY = "django-insecure-(f^pen8fq6(-wpaf3b77*u8n^(9x!-horawloqw(cd$hz6)+c1
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True if getenv("DEBUG") == "True" else False
+DEBUG = True
 
 
 ALLOWED_HOSTS = [
@@ -86,12 +88,12 @@ WSGI_APPLICATION = "charityproject.wsgi.application"
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
-DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
-    }
-}
+# this gets overwritten
+DATABASES = {"default": {}}
+
+# requires a env DATABASE_URL for db str (using postgressql)
+
+DATABASES["default"] = dj_database_url.config(conn_max_age=600, ssl_require=False)
 
 
 # Password validation
