@@ -1,6 +1,18 @@
 # contains custom additional functions
 import requests
 import os
+import re
+def extract_youtube_video_id(url):
+    # Regular expression pattern to match YouTube video IDs
+    pattern = r"(?:https?://)?(?:www\.)?(?:youtube\.com/watch\?v=|youtu\.be/)([a-zA-Z0-9_-]{11})"
+
+    # Search for the pattern in the URL
+    match = re.search(pattern, url)
+
+    if match:
+        return match.group(1)  # Return the matched video ID
+    else:
+        return None  # If no match is found, return None
 
 
 def ThxMsg(user):

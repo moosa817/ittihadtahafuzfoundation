@@ -8,4 +8,5 @@ urlpatterns = [
     path("services", views.services),
     path("contact", views.contact, name="contact"),
     path("gallery", views.gallery),
+    path("donate", views.donate),
 ]

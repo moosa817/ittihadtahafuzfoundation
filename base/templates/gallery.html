@@ -1,10 +1,68 @@
 {%extends 'base.html'%}
-
+{%load static%}
 {%block title%}Gallery{%endblock%}
-{%block title2%}Services{%endblock%}
 
 
 {%block content%}
 
+<div class="mx-auto container my-10">
+
+    <div class="flex justify-center text-xl text-indigo-500 ">
+        <div id="img-btn"
+            class=" bg-indigo-300 text-white shadow-xl p-4 rounded hover:cursor-pointer hover:bg-indigo-300 hover:text-white duration-500 hover:scale-110">
+            Images</div>
+        <div id="vid-btn"
+            class=" p-4 shadow-xl text-indigo-500 hover:cursor-pointer hover:bg-indigo-300 hover:text-white rounded duration-500 hover:scale-110">
+            Videos</div>
+    </div>
+</div>
+
+<div id="image-section" class="my-20">
+
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 container mx-auto">
+
+        {%for imgs in images_list %}
+        <div class="grid gap-4">
+            {%for url in imgs %}
+            <div>
+                <img class="h-auto max-w-full rounded-lg" src="{{url}}" alt="">
+            </div>
+            {%endfor%}
+        </div>
+        {%endfor%}
+
+    </div>
+
+
+</div>
+</div>
+
+
+<div id="video-section" class="hidden container mx-auto">
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-8">
+        {%for url in vids_link%}
+        <div>
+            <iframe class="rounded-lg h-72 w-full" src="{{url}}" allowfullscreen></iframe>
+        </div>
+        {%endfor%}
+    </div>
+</div>
+
+
+
+<script>
+    let images = []
+
+
+
+    "{% for url in img %}"
+    images.push({ url: "{{ url }}" })
+
+    "{% endfor %}"
+</script>
+<script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+
+
+<script src="{%static 'js/gallery.js' %}" defer></script>
 
 {%endblock%}

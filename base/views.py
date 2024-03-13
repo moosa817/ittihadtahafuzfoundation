@@ -2,7 +2,8 @@ from django.shortcuts import render
 from django.http import JsonResponse
 
 from .forms import ContactForm
-from .utils import EmailTo, ThxMsg, generate_inquiry_email
+from .utils import EmailTo, ThxMsg, generate_inquiry_email, extract_youtube_video_id
+from .models import GalleryImages, VideoLinks
 
 
 # Create your views here.
@@ -16,6 +17,10 @@ def about(request):
 
 def services(request):
     return render(request, "services.html")
+
+
+def donate(request):
+    return render(request, "donate.html")
 
 
 def contact(request):
@@ -58,4 +63,18 @@ def contact(request):
 
 
 def gallery(request):
-    return render(request, "gallery.html")
+    img = GalleryImages.objects.all()
+    n = round(img.count() / 4)
+
+    # [[1,2,3],[1,2,3]]
+
+    images_list = [img[i : i + n] for i in range(0, len(img), n)]
+
+    vids = VideoLinks.objects.all()
+    vids_link = [
+        f"https://www.youtube.com/embed/{extract_youtube_video_id(i.link)}"
+        for i in vids
+    ]
+
+    context = {"images_list": images_list, "vids_link": vids_link}
+    return render(request, "gallery.html", context)

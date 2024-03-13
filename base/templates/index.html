@@ -4,6 +4,12 @@
 
 
 {%block content%}
+<style>
+  html {
+    scroll-behavior: smooth;
+  }
+
+</style>
 
 <div id="default-carousel" class="relative" data-carousel="static">
   <!-- Carousel wrapper -->
@@ -34,11 +40,14 @@
             through compassion: ITTihad Tahafuz Foundation (ITF) - Uniting for a Secure Future
           </div>
           <div class="flex justify-center">
-            <button type="button"
-              class="text-indigo-400 text-lg hover:text-white rounded-lg font-thin bg-transparent sm:text-2xl hover:bg-gradient-to-br from-purple-600  border border-indigo-500 md:my-10 md:px-10 md:py-5 text-center mb-2 p-2 mx-4 duration-200">Read
-              More</button>
-            <button type="button"
-              class="text-white hover:scale-110 text-lg sm:text-2xl bg-gradient-to-br from-purple-600 to-blue-500 border border-purple-500 font-thin rounded-lg md:my-10 md:px-10 md:py-5 text-center mb-2 p-2">Donate</button>
+            <a href="#achivements">
+              <button type="button"
+                class="text-indigo-400 text-lg hover:text-white rounded-lg font-thin bg-transparent sm:text-2xl hover:bg-gradient-to-br from-purple-600  border border-indigo-500 md:my-10 md:px-10 md:py-5 text-center mb-2 p-2 mx-4 duration-200">Read
+                More</button>
+            </a>
+            <a href="/donate">
+              <button type="button"
+                class="text-white hover:scale-110 text-lg sm:text-2xl bg-gradient-to-br from-purple-600 to-blue-500 border border-purple-500 font-thin rounded-lg md:my-10 md:px-10 md:py-5 text-center mb-2 p-2">Donate</button></a>
           </div>
         </div>
       </div>
@@ -50,7 +59,7 @@
       alt="" data-carousel-item>
 
       <div class="absolute top-[30%] md:top-[45%] md:left-[45%] left-[40%] z-50">
-        <div class="relative  md:right-20 right-5 text-xl md:text-[4rem] text-white font-bold">About Us</div>
+        <div class="relative  md:right-32 right-5 text-xl md:text-[4rem] text-white font-bold">Learn About Us</div>
 
         <button type="button"
           class="text-white bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl text-sm font-medium md:my-10 md:px-10 md:py-5 text-center mb-2 p-2">About</button>
@@ -59,11 +68,11 @@
 
     <!-- item 3 -->
     <div
-      class="hidden duration-700 ease-in-out bg-[url('https://d2nf2tnwikupdj.cloudfront.net/static/imgs/slide3.png')] bg-cover grayscale"
+      class="hidden duration-700 ease-in-out bg-[url('https://d2nf2tnwikupdj.cloudfront.net/static/imgs/slide3.png')] bg-cover saturate-50"
       alt="" data-carousel-item>
 
       <div class="absolute top-[30%] md:top-[45%] md:left-[45%] left-[40%] z-50">
-        <div class="relative  md:right-20 right-5 text-xl md:text-[4rem] text-white font-bold">Contact US</div>
+        <div class="relative  md:right-36 right-5 text-xl md:text-[4rem] text-white font-bold">Connect With Us</div>
 
         <button type="button"
           class="text-white bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl text-sm font-medium md:my-10 md:px-10 md:py-5 text-center mb-2 p-2">Contact</button>
@@ -112,7 +121,7 @@
 
 </div>
 
-<div class="flex justify-center mt-5">
+<div class="flex justify-center mt-5" id="achivements">
   <div>
     <img src="{%static 'imgs/logo2.jpg' %}" class="w-full h-24 sm:h-36" alt="">
 
@@ -265,12 +274,108 @@
 </div>
 
 
-<div class="container">
-  <div class="grid grid-cols-1 sm:grid-cols-2">
+<div class="container my-20 mx-auto">
+  <div class="flex justify-between flex-col sm:flex-row">
+
+
+    <div class="w-full sm:w-1/2" data-aos="fade-right">
+      <div class="text-4xl font-serif font-semibold text-indigo-500 mb-4">Founder's Message</div>
+      <div class="text-gray-500 font-sans">
+        Dear Supporters,<br><br>
+
+        As the founder of Ittihad Tahafuz Foundation, I am immensely proud to welcome you to our cause. It has been a
+        journey <br>
+        filled with passion, dedication, and a relentless commitment to making a positive impact in the lives of those
+        in need. <br>
+
+        At Ittihad Tahafuz Foundation, we believe in the power of unity, compassion, and solidarity. Our mission is to
+        extend a
+        helping hand to the marginalized, the vulnerable, and the oppressed. We strive to create a world where every
+        individual
+        has access to the basic necessities of life, where dignity is upheld, and where hope shines bright.
+        <br>
+        Together, we can make a difference. Together, we can build a brighter future for generations to come. I invite
+        you to
+        join us in our noble endeavor, as we work tirelessly to create positive change and leave a lasting legacy of
+        kindness
+        and compassion.
+        <br>
+        Thank you for your unwavering support and belief in our vision. Together, let us continue to spread love, hope,
+        and
+        healing to those in need.
+        <br><br>
+        With gratitude,
+        <br>
+        Mehmood Bajwa<br>
+        Founder, Ittihad Tahafuz Foundation
+      </div>
+    </div>
+
+    <div data-aos="fade-left">
+      <img src="{%static 'imgs/founder.jpg' %}" class="rounded-xl w-96" alt="">
+    </div>
     <div></div>
 
   </div>
 
 </div>
+
+<!-- explore gallery -->
+<div
+  class="my-10 bg-[url('https://d2nf2tnwikupdj.cloudfront.net/static/imgs/gallery_preview.jpg')] bg-cover h-96 bg-center flex-col  bg-fixed flex justify-center items-center saturate-50">
+
+  <div data-aos="fade-up" class="text-center text-5xl text-white font-extrabold font-serif">
+    Explore Our Gallery
+  </div>
+
+  <div>
+    <a href="/gallery">
+      <button type="button"
+        class="text-white border border-indigo-400 hover:bg-gradient-to-br from-indigo-400 my-4 hover:scale-110 duration-100 More focus:ring-4 focus:outline-none focus:ring-green-200 dark:focus:ring-green-800 font-medium rounded-lg px-5 py-2.5 text-center me-2 mb-2 text-xl p-5 bg-transparent font-mono">Explore
+  </div>
+  </a>
+</div>
+
+
+<div data-aos="zoom-in" class="flex justify-center text-4xl text-gray-600 font-semibold">
+  Our Sponsors</div>
+
+
+<div class=" my-10" data-aos="fade-up">
+  <div class="container mx-auto flex">
+    <div class="swiper-slide"><img src="{%static 'imgs/partners/haveli.png'%}" alt="" class="w-44 border shadow-lg">
+    </div>
+
+    <div class="swiper-slide"><img src="{%static 'imgs/partners/easypaisa.jpg'%}" alt="" class="w-44 border shadow-lg">
+    </div>
+
+    <div class="swiper-slide"><img src="{%static 'imgs/partners/hbl.jpg'%}" alt="" class="w-44 border shadow-lg"></div>
+
+    <div class="swiper-slide"><img src="{%static 'imgs/partners/jazzcash.jpg'%}" alt="" class="w-44 border shadow-lg">
+    </div>
+
+    <div class="swiper-slide"><img src="{%static 'imgs/partners/logo-surmawala.png'%}" alt=""
+        class="w-44 border shadow-lg"></div>
+
+    <div class="swiper-slide"><img src="{%static 'imgs/partners/maryam.jpg'%}" alt="" class="w-44 border shadow-lg">
+    </div>
+
+    <div class="swiper-slide"><img src="{%static 'imgs/partners/mhb.jpg'%}" alt="" class="w-44 border shadow-lg"></div>
+
+
+  </div>
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
 
 {%endblock%}
