@@ -1,15 +1,174 @@
-{% extends 'base.html' %} 
-
+{% extends 'base.html' %}
+{%load static%}
 
 {%block title%} About Us {%endblock%}
-{%block title2%} About Us {%endblock%} 
+
+{% block content %}
+
+
+<div
+    class="mb-10 bg-[url('https://d2nf2tnwikupdj.cloudfront.net/static/imgs/services/ambulance.jpg')] bg-cover h-96 bg-center flex-col  bg-fixed flex justify-center items-center saturate-50">
+
+    <div data-aos="fade-up" class="text-center text-5xl text-white font-extrabold font-serif">
+        About Us
+
+    </div>
+    <div class="text-sm text-white font-semibold w-1/2 flex justify-center">
+        Ittehad Tahafuz Foundation is exclusively engaged and supports charitable activities. It is purely for
+        charitable
+        purposes, particularly supporting education, health-care and other related relief services. ITF is dedicated
+        to the
+        services of humanity, without any discrimination of creed, religion and political association.
+    </div>
+
+    <div>
+        <a href="#abc">
+            <button type="button"
+                class="text-white border border-indigo-400 hover:bg-gradient-to-br from-indigo-400 my-4 hover:scale-110 duration-100 More focus:ring-4 focus:outline-none focus:ring-green-200 dark:focus:ring-green-800 font-medium rounded-lg px-5 py-2.5 text-center me-2 mb-2 text-xl p-5 bg-transparent font-mono">Read
+                More
+    </div>
+    </a>
+</div>
+
+<div>
+    <div class="container my-20 mx-auto">
+        <div class="flex sm:justify-between flex-col justify-center sm:flex-row">
+
+
+            <div class="w-full sm:w-1/2" data-aos="fade-right">
+                <div class="text-4xl font-serif font-semibold text-indigo-500 mb-4">Introduction</div>
+                <div class="text-gray-500 font-sans">
+                    The Messenger of Allah said, ''the believers are like one body in their mutual
+                    love and effection if one limb is unwell, the rest respond with sleeplessness
+                    <span id="abc"></span>
+                    and fever.''- BUKHARI & MUSLIM <br><br>
+                    SINCE ITS INCEPTION in 2019 on the foundations of piety, brotherhood and
+                    a profound sense of responsibility, ITTIHAD TAHAFUZ FOUNDATION
+                    namely as ITF has striven tirelessly and selflessly, night and day , through
+                    good times and bad to serve humanity without discrimination, remove
+                    affliction of every kind, and bring a smile on the faces of the suffering. From
+                    raising orphans , delivering disaster relief and arranging micro finance, to
+                    providing affordable education, healthcare and clean water, providing them
+                    meals & clothes, ITTIHAD TAHAFUZ FOUNDATION a non profit
+                    organization’s efforts touch every facet of life. <br>
+                    Over the years, ITTHIHAD TAHAFUZ FOUNDATION scope of initiative and
+                    team of volunteers have grown exponentially to make it Pakistan's leading
+                    NGO in humanitarian services, with a notable presence in foreign lands too.
+
+                </div>
+            </div>
+
+            <div data-aos="fade-left">
+                <img src="{%static 'imgs/itf_about.png' %}" class="rounded-xl w-96" alt="">
+            </div>
+            <div></div>
+
+        </div>
+
+    </div>
+
+
+</div>
+<hr class="my-10 w-full border">
+<div>
+    <div class="flex justify-center text-4xl text-indigo-500 font-semibold">
+        Our Mission
+        <hr>
+    </div>
+    <div class="text-center flex justify-center  text-gray-400 font-semibold font-sans my-4">
+        <div class="w-full sm:w-1/2">
+            "At Ittihad Tahafuz Foundation, our mission is to safeguard and empower vulnerable communities through
+            comprehensive
+            initiatives aimed at promoting education, healthcare, and socio-economic development. Rooted in compassion
+            and
+            driven by
+            a commitment to social justice, we strive to create a world where every individual, regardless of their
+            circumstances,
+            has access to essential resources and opportunities for a dignified and fulfilling life. Through
+            collaborative
+            partnerships and innovative solutions, we work tirelessly to address the root causes of inequality and
+            injustice,
+            fostering sustainable change and uplifting communities towards a brighter future."
+        </div>
+    </div>
+</div>
 
 
 
 
+<hr class="my-10 w-full border">
 
-{% block content %} 
+<div>
+    <div class="text-4xl text-indigo-500 font-semibold font-serif text-center">
+        How to Support ?
+    </div>
 
 
-about page
+    <div class="bg-indigo-400 my-10 ">
+        <div class="container mx-auto py-10 grid grid-cols-2 sm:grid-cols-4 gap-12 my-10">
+            <div class="hidden sm:block"></div>
+            <div>
+                <img src="{%static 'imgs/support/teach.png'%}">
+                <div class="text-xl text-white">
+                    Sponsor a Class
+                    per annum for only
+                    PKR 250,000/-
+                </div>
+            </div>
+
+            <div>
+                <img src="{%static 'imgs/support/give.png'%}">
+                <div class="text-xl text-white">
+                    Covers One Meal for
+                    the Entire Shelter
+                    PKR 30,000/-
+                </div>
+            </div>
+
+            <div class="hidden sm:block"></div>
+
+
+            <div class="hidden sm:block"></div>
+            <div>
+                <img src="{%static 'imgs/support/learn.png'%}">
+                <div class="text-xl text-white">
+                    Educate a Child
+                    for a Year for only
+                    PKR 15,000/-
+
+                </div>
+            </div>
+
+            <div>
+                <img src="{%static 'imgs/support/hospital.png'%}">
+                <div class="text-xl text-white">
+                    Sponsor Eye Surgery
+                    per Patient for only
+                    PKR 30,000/-
+
+                </div>
+            </div>
+
+            <div class="hidden sm:block"></div>
+        </div>
+    </div>
+</div>
+
+<hr class="my-10 w-full border">
+
+<div>
+    <div class="bg-indigo-400 p-10">
+        <div class="text-center text-3xl my-4 text-white">
+            HELP US MAKE THIS WORLD A BETTER PLACE
+
+        </div>
+        <div class="flex justify-center ">
+            <a href="/donate">
+                <button class="text-2xl font-serif text-white text-center p-4 border duration-700 hover:bg-indigo-500">
+                    DONATE NOW
+                </button>
+            </a>
+        </div>
+    </div>
+</div>
 {% endblock %}
