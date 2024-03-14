@@ -1170,6 +1170,11 @@ input:checked + .toggle-bg {
   margin-right: 0.5rem;
 }
 
+.my-3 {
+  margin-top: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
 .my-6 {
   margin-top: 1.5rem;
   margin-bottom: 1.5rem;
@@ -1185,9 +1190,9 @@ input:checked + .toggle-bg {
   margin-right: 1.25rem;
 }
 
-.my-3 {
-  margin-top: 0.75rem;
-  margin-bottom: 0.75rem;
+.mx-10 {
+  margin-left: 2.5rem;
+  margin-right: 2.5rem;
 }
 
 .mb-10 {
@@ -1354,8 +1359,8 @@ input:checked + .toggle-bg {
   width: 300px;
 }
 
-.w-60 {
-  width: 15rem;
+.w-72 {
+  width: 18rem;
 }
 
 .w-3\/4 {
@@ -1382,8 +1387,8 @@ input:checked + .toggle-bg {
   width: 1.5rem;
 }
 
-.w-72 {
-  width: 18rem;
+.w-32 {
+  width: 8rem;
 }
 
 .max-w-screen-xl {
@@ -1404,6 +1409,10 @@ input:checked + .toggle-bg {
 
 .flex-shrink {
   flex-shrink: 1;
+}
+
+.shrink-0 {
+  flex-shrink: 0;
 }
 
 .origin-\[0\] {
@@ -1480,6 +1489,10 @@ input:checked + .toggle-bg {
   resize: both;
 }
 
+.list-disc {
+  list-style-type: disc;
+}
+
 .appearance-none {
   -webkit-appearance: none;
      -moz-appearance: none;
@@ -1550,6 +1563,10 @@ input:checked + .toggle-bg {
   gap: 2rem;
 }
 
+.gap-3 {
+  gap: 0.75rem;
+}
+
 .space-x-3 > :not([hidden]) ~ :not([hidden]) {
   --tw-space-x-reverse: 0;
   margin-right: calc(0.75rem * var(--tw-space-x-reverse));
@@ -1608,6 +1625,11 @@ input:checked + .toggle-bg {
   border-bottom-right-radius: 0.5rem;
 }
 
+.rounded-t-xl {
+  border-top-left-radius: 0.75rem;
+  border-top-right-radius: 0.75rem;
+}
+
 .border {
   border-width: 1px;
 }
@@ -1626,6 +1648,18 @@ input:checked + .toggle-bg {
 
 .border-r-2 {
   border-right-width: 2px;
+}
+
+.border-b-0 {
+  border-bottom-width: 0px;
+}
+
+.border-t-0 {
+  border-top-width: 0px;
+}
+
+.border-b {
+  border-bottom-width: 1px;
 }
 
 .border-none {
@@ -1817,6 +1851,14 @@ input:checked + .toggle-bg {
   background-image: linear-gradient(to right, var(--tw-gradient-stops));
 }
 
+.bg-\[url\(\'https\:\/\/d2nf2tnwikupdj\.cloudfront\.net\/static\/imgs\/services_bg\.jpg\'\)\] {
+  background-image: url('https://d2nf2tnwikupdj.cloudfront.net/static/imgs/services_bg.jpg');
+}
+
+.bg-\[url\(\'https\:\/\/d2nf2tnwikupdj\.cloudfront\.net\/static\/imgs\/donate\.webp\'\)\] {
+  background-image: url('https://d2nf2tnwikupdj.cloudfront.net/static/imgs/donate.webp');
+}
+
 .from-indigo-400 {
   --tw-gradient-from: #8DA2FB;
   --tw-gradient-to: rgb(141 162 251 / 0);
@@ -1864,6 +1906,10 @@ input:checked + .toggle-bg {
 
 .bg-center {
   background-position: center;
+}
+
+.bg-left {
+  background-position: left;
 }
 
 .p-5 {
@@ -2450,6 +2496,10 @@ input:checked + .toggle-bg {
   color: rgb(28 100 242 / var(--tw-text-opacity));
 }
 
+[dir="rtl"] .rtl\:text-right {
+  text-align: right;
+}
+
 .dark .dark\:border-green-800 {
   --tw-border-opacity: 1;
   border-color: rgb(3 84 63 / var(--tw-border-opacity));
@@ -2604,6 +2654,11 @@ input:checked + .toggle-bg {
 .dark .dark\:focus\:ring-gray-600:focus {
   --tw-ring-opacity: 1;
   --tw-ring-color: rgb(75 85 99 / var(--tw-ring-opacity));
+}
+
+.dark .dark\:focus\:ring-gray-800:focus {
+  --tw-ring-opacity: 1;
+  --tw-ring-color: rgb(31 41 55 / var(--tw-ring-opacity));
 }
 
 .dark .group:hover .dark\:group-hover\:bg-gray-800\/60 {
@@ -2787,6 +2842,14 @@ input:checked + .toggle-bg {
 
   .md\:w-auto {
     width: auto;
+  }
+
+  .md\:w-2\/3 {
+    width: 66.666667%;
+  }
+
+  .md\:w-1\/3 {
+    width: 33.333333%;
   }
 
   .md\:grid-cols-2 {
