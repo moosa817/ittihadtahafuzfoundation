@@ -1,5 +1,12 @@
 {%load static%}
 <!DOCTYPE html>
+<link rel="stylesheet" href="{%static 'css/dist/style.css' %}">
+
+<div id="loading-indicator">
+  <div class="lds-hourglass "></div>
+</div>
+
+
 <html lang="en">
 
 <head>
@@ -7,6 +14,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
 
   <link rel="stylesheet" href="{% static 'css/dist/output.css' %}">
   <link rel="shortcut icon" href="{%static 'imgs/logo.png' %}" type="image/x-icon">
@@ -39,10 +47,15 @@
 
 
 
+
+
+
   {%include 'nav.html'%}
 
 
   {% block content %}{% endblock %}
+
+
 
   {%include 'footer.html'%}
 </body>

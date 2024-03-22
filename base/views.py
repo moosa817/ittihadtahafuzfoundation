@@ -4,6 +4,12 @@ from django.http import JsonResponse
 from .forms import ContactForm
 from .utils import EmailTo, ThxMsg, generate_inquiry_email, extract_youtube_video_id
 from .models import GalleryImages, VideoLinks
+from django.core.serializers import serialize
+import json
+
+# images gallery should get at a time
+IMAGES_COUNT = 2
+VIDEOS_COUNT = 2
 
 
 # Create your views here.
@@ -63,14 +69,16 @@ def contact(request):
 
 
 def gallery(request):
-    img = GalleryImages.objects.all()
+    img = GalleryImages.objects.all()[:IMAGES_COUNT]
     n = round(img.count() / 4)
 
     # [[1,2,3],[1,2,3]]
 
-    images_list = [img[i : i + n] for i in range(0, len(img), n)]
+    # images_list = [img[i : i + n] for i in range(0, len(img), n)]
+    images_list = img
 
-    vids = VideoLinks.objects.all()
+    vids = VideoLinks.objects.all()[:2]
+
     vids_link = [
         f"https://www.youtube.com/embed/{extract_youtube_video_id(i.link)}"
         for i in vids
@@ -78,3 +86,38 @@ def gallery(request):
 
     context = {"images_list": images_list, "vids_link": vids_link}
     return render(request, "gallery.html", context)
+
+
+def load_images(request):
+    if request.method == "POST":
+        ending_index = int(request.POST.get("ending_index"))
+
+        images = GalleryImages.objects.all()[ending_index : ending_index + IMAGES_COUNT]
+
+        images_list = [image.image.url for image in images]
+        images_list = json.dumps(images_list)
+
+        final_images = len(images) < IMAGES_COUNT
+
+        return JsonResponse({"finalimages": final_images, "images": images_list})
+
+
+def load_videos(request):
+    if request.method == "POST":
+        ending_index = int(request.POST.get("ending_index"))
+
+        videos = VideoLinks.objects.all()[ending_index : ending_index + VIDEOS_COUNT]
+
+        videos_list = [
+            f"https://www.youtube.com/embed/{extract_youtube_video_id(video.link)}"
+            for video in videos
+        ]
+        videos_list = json.dumps(videos_list)
+
+        final_videos = len(videos) < VIDEOS_COUNT
+
+        return JsonResponse({"finalvideos": final_videos, "videos": videos_list})
+
+
+def certificate(request):
+    return render(request, "certificate.html")

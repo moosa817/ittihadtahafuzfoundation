@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+{%load static%}
+
+{%block title%} Certificates {%endblock%}
+
+{% block content %}
+
+<div
+    class="mb-10 bg-[url('https://d2nf2tnwikupdj.cloudfront.net/static/imgs/certificate.jpeg')] bg-cover h-96 flex-col  bg-fixed flex justify-center items-center saturate-50 bg-opacity-50">
+
+    <div data-aos="fade-up" class="text-center text-5xl text-white font-extrabold font-serif uppercase">
+        Certificates
+
+    </div>
+
+
+
+
+
+
+
+
+    </a>
+</div>
+
+
+
+<div class="mb-10 mt-20 container mx-auto">
+    <div class="grid grid-cols-1 sm:grid-cols-3">
+        <div class="h-96 flex justify-center flex-col items-center my-10">
+            <div class="text-xl text-indigo-400 text-center font-semibold">FBR Certificate</div>
+            <a href="{%static 'imgs/certificates/fbr.png' %}" target="_blank">
+                <img class="h-96" src="{%static 'imgs/certificates/fbr.png' %}" alt=""></a>
+
+        </div>
+        <div class="h-96 flex justify-center flex-col items-center my-10">
+            <div class="text-xl text-indigo-400 text-center font-semibold">Registeration Certificate</div>
+            <a href="{% static 'imgs/certificates/registeration.jpg' %}" target="_blank">
+                <img class="h-96" src="{% static 'imgs/certificates/registeration.jpg' %}" alt="">
+            </a>
+
+        </div>
+        <div class="h-96 flex justify-center flex-col items-center my-10">
+            <div class="text-xl text-indigo-400 text-center font-semibold">Society Registeration Certificate</div>
+            <a href="{% static 'imgs/certificates/society.PNG' %}" target="_blank">
+                <img class="h-96" src="{% static 'imgs/certificates/society.PNG' %}" alt="">
+            </a>
+
+        </div>
+
+
+    </div>
+</div>
+{%endblock%}
