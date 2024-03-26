@@ -4,6 +4,25 @@ let current_section = 'image';
 
 let videos_length = videos.length;
 
+function appendVideo(url) {
+    var iframe = document.createElement("iframe");
+    iframe.src = "https://www.facebook.com/plugins/video.php?href=" + encodeURIComponent(url) + "&show_text=0&width=560";
+    iframe.className = "rounded-lg h-72 w-full";
+    iframe.style.border = "none";
+    iframe.style.overflow = "hidden";
+    iframe.scrolling = "no";
+    iframe.frameBorder = "0";
+    iframe.allowTransparency = "true";
+    iframe.allowFullscreen = "true";
+
+    // Append the iframe to the #vid-grid element
+    document.getElementById("vid-grid").appendChild(iframe);
+
+
+}
+
+
+
 $('#img-btn').click(function (e) {
     $('#vid-btn').removeClass('bg-indigo-300');
     $('#vid-btn').removeClass('text-white');
@@ -32,12 +51,7 @@ $('#vid-btn').click(function (e) {
 
         vid_btn_click = true;
         videos.forEach(url => {
-
-            $("#vid-grid").append(`
-        
-            <iframe class="rounded-lg h-72 w-full" src="${url}" allowfullscreen allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"></iframe>
-
-                `);
+            appendVideo(url);
         });
 
 
@@ -75,7 +89,7 @@ let n = 0;
 function ImagesScrollHandler() {
     // Check if the user has reached the bottom of the page
 
-    let ending_index = parseInt(images_length) - 1
+    let ending_index = parseInt(images_length);
     if ((window.innerHeight + window.scrollY) >= document.body.scrollHeight - 200 && !loading && current_section == 'image') {
         loading = true
         $('#img-waiting').show()
@@ -138,7 +152,7 @@ function VideosScrollHandler() {
         loading = true
         $('#video-waiting').show()
 
-        let ending_index = videos_length - 1;
+        let ending_index = videos_length;
         $.ajax({
             data: {
                 ending_index: ending_index,
@@ -155,13 +169,10 @@ function VideosScrollHandler() {
                 let videos = JSON.parse(data.videos)
 
                 videos.forEach(url => {
-                    console.log(url);
-                    $("#vid-grid").append(`
-        
-            <iframe class="rounded-lg h-72 w-full" src="${url}" allowfullscreen allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"></iframe>
-
-                        `);
+                    appendVideo(url);
                 });
+
+
                 videos_length += videos.length;
                 loading = false;
                 $('#video-waiting').fadeOut()

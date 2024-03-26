@@ -8,8 +8,8 @@ from django.core.serializers import serialize
 import json
 
 # images gallery should get at a time
-IMAGES_COUNT = 2
-VIDEOS_COUNT = 2
+IMAGES_COUNT = 30
+VIDEOS_COUNT = 8
 
 
 # Create your views here.
@@ -69,21 +69,15 @@ def contact(request):
 
 
 def gallery(request):
-    img = GalleryImages.objects.all()[:IMAGES_COUNT]
-    n = round(img.count() / 4)
+    img = GalleryImages.objects.all()[:50]
 
-    # [[1,2,3],[1,2,3]]
-
-    # images_list = [img[i : i + n] for i in range(0, len(img), n)]
     images_list = img
 
-    vids = VideoLinks.objects.all()[:2]
+    vids = VideoLinks.objects.all()[:10]
 
-    vids_link = [
-        f"https://www.youtube.com/embed/{extract_youtube_video_id(i.link)}"
-        for i in vids
-    ]
+    vids_link = vids.values_list("link", flat=True)
 
+    print(vids_link, type(vids_link))
     context = {"images_list": images_list, "vids_link": vids_link}
     return render(request, "gallery.html", context)
 
@@ -108,11 +102,7 @@ def load_videos(request):
 
         videos = VideoLinks.objects.all()[ending_index : ending_index + VIDEOS_COUNT]
 
-        videos_list = [
-            f"https://www.youtube.com/embed/{extract_youtube_video_id(video.link)}"
-            for video in videos
-        ]
-        videos_list = json.dumps(videos_list)
+        videos_list = json.dumps([i for i in videos.values_list("link", flat=True)])
 
         final_videos = len(videos) < VIDEOS_COUNT
 
