@@ -5,18 +5,13 @@ let current_section = 'image';
 let videos_length = videos.length;
 
 function appendVideo(url) {
-    var iframe = document.createElement("iframe");
-    iframe.src = "https://www.facebook.com/plugins/video.php?href=" + encodeURIComponent(url) + "&width=500&show_text=true&appId=651642853742723";
-    iframe.className = "rounded-lg h-72 w-full";
-    iframe.style.border = "none";
-    iframe.style.overflow = "hidden";
-    iframe.scrolling = "no";
-    iframe.frameBorder = "0";
-    iframe.allowTransparency = "true";
-    iframe.allowFullscreen = "true";
-
-    // Append the iframe to the #vid-grid element
-    document.getElementById("vid-grid").appendChild(iframe);
+    url = encodeURIComponent(url);
+    $('#vid-grid').append(`
+    <iframe
+    src="https://www.facebook.com/plugins/video.php?href=${url}&width=500&show_text=false&appId=651642853742723&height=280"
+    width="500" height="280" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true"
+    allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true"></iframe>
+    `);
 }
 
 
