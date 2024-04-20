@@ -17,8 +17,6 @@ function appendVideo(url) {
 
     // Append the iframe to the #vid-grid element
     document.getElementById("vid-grid").appendChild(iframe);
-
-
 }
 
 
