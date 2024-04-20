@@ -6,7 +6,7 @@ let videos_length = videos.length;
 
 function appendVideo(url) {
     var iframe = document.createElement("iframe");
-    iframe.src = "https://www.facebook.com/plugins/video.php?href=" + encodeURIComponent(url) + "&show_text=0&width=560";
+    iframe.src = "https://www.facebook.com/plugins/video.php?href=" + encodeURIComponent(url) + "&width=500&show_text=true&appId=651642853742723";
     iframe.className = "rounded-lg h-72 w-full";
     iframe.style.border = "none";
     iframe.style.overflow = "hidden";
