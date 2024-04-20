@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.http import JsonResponse
 
 from .forms import ContactForm
-from .utils import EmailTo, ThxMsg, generate_inquiry_email, extract_youtube_video_id
+from .utils import EmailTo, ThxMsg, generate_inquiry_email, extract_fb_video_id
 from .models import GalleryImages, VideoLinks
 from django.core.serializers import serialize
 import json
@@ -76,6 +76,7 @@ def gallery(request):
     vids = VideoLinks.objects.all()[:10]
 
     vids_link = vids.values_list("link", flat=True)
+    vids_link = [extract_fb_video_id(i) for i in vids_link]
 
     print(vids_link, type(vids_link))
     context = {"images_list": images_list, "vids_link": vids_link}
@@ -106,6 +107,9 @@ def load_videos(request):
 
         final_videos = len(videos) < VIDEOS_COUNT
 
+        videos_list = [extract_fb_video_id(i) for i in videos_list]
+
+        print(videos_list)
         return JsonResponse({"finalvideos": final_videos, "videos": videos_list})
 
 

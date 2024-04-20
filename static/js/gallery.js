@@ -5,10 +5,9 @@ let current_section = 'image';
 let videos_length = videos.length;
 
 function appendVideo(url) {
-    url = encodeURIComponent(url);
+    // url = encodeURIComponent(url);
     $('#vid-grid').append(`
-    <iframe src="https://www.facebook.com/v2.3/plugins/video.php?allowfullscreen=true&autoplay=true&container_width=800&href=${url}"  style="border:none;overflow:hidden" scrolling="no" frameborder="0" 
-    allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true"></iframe>
+    <iframe src="http://www.facebook.com/video/embed?video_id=${url}" frameborder="0" width="100%" height="100%">
     `);
 }
 
