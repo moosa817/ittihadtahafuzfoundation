@@ -76,9 +76,7 @@ def gallery(request):
     vids = VideoLinks.objects.all()[:10]
 
     vids_link = vids.values_list("link", flat=True)
-    vids_link = [extract_fb_video_id(i) for i in vids_link]
 
-    print(vids_link, type(vids_link))
     context = {"images_list": images_list, "vids_link": vids_link}
     return render(request, "gallery.html", context)
 
@@ -107,9 +105,6 @@ def load_videos(request):
 
         final_videos = len(videos) < VIDEOS_COUNT
 
-        videos_list = [extract_fb_video_id(i) for i in videos_list]
-
-        print(videos_list)
         return JsonResponse({"finalvideos": final_videos, "videos": videos_list})
 
 
