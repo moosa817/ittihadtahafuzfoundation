@@ -5,10 +5,18 @@ let current_section = 'image';
 let videos_length = videos.length;
 
 function appendVideo(url) {
-    // url = encodeURIComponent(url);
-    $('#vid-grid').append(`
-    <iframe src="http://www.facebook.com/video/embed?video_id=${url}" frameborder="0" width="100%" height="100%">
-    `);
+    var iframe = document.createElement("iframe");
+    iframe.src = "https://www.facebook.com/plugins/video.php?href=" + encodeURIComponent(url) + "&show_text=0&width=560";
+    iframe.className = "rounded-lg h-72 w-full";
+    iframe.style.border = "none";
+    iframe.style.overflow = "hidden";
+    iframe.scrolling = "no";
+    iframe.frameBorder = "0";
+    iframe.allowTransparency = "true";
+    iframe.allowFullscreen = "true";
+
+    // Append the iframe to the #vid-grid element
+    document.getElementById("vid-grid").appendChild(iframe);
 }
 
 
