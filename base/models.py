@@ -35,3 +35,13 @@ class GalleryImages(models.Model):
 
     def __str__(self):
         return self.image.url
+
+
+class NoticeBoard(models.Model):
+    event_date = models.DateField()
+    subject = models.CharField(max_length=100)
+    content = models.TextField()
+    date = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.subject

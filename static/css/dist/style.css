@@ -28,7 +28,7 @@
   margin: 6px;
   box-sizing: border-box;
   border: 26px solid #333;
-  border-color: orange transparent orange transparent; 
+  border-color: orange transparent orange transparent;
   animation: lds-hourglass 1.2s infinite;
 }
 
@@ -37,11 +37,120 @@
     transform: rotate(0);
     animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
   }
+
   50% {
     transform: rotate(900deg);
     animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
   }
+
   100% {
     transform: rotate(1800deg);
   }
+}
+
+@keyframes typing {
+  from {
+    width: 0
+  }
+
+  to {
+    width: 100%
+  }
+}
+
+@keyframes blink-caret {
+
+  from,
+  to {
+    border-color: transparent
+  }
+
+  50% {
+    border-color: orange
+  }
+}
+
+.animate-typing {
+  display: inline-block;
+  overflow: hidden;
+  border-right: .15em solid orange;
+  white-space: nowrap;
+  margin: 0 auto;
+  letter-spacing: .15em;
+  animation: typing 3.5s steps(40, end), blink-caret .75s step-end infinite;
+}
+
+.text-shadow-lg {
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.animate-delay {
+  animation-delay: 7s;
+  animation: fadeIn 6s ease-in-out;
+}
+
+
+
+.overflow-x-auto {
+  overflow-x: auto;
+  white-space: nowrap;
+  min-width: 100%;
+  /* Ensure a minimum width for the container */
+}
+
+swiper-container {
+  width: 100%;
+  height: 100%;
+}
+
+swiper-slide {
+  margin-bottom: 3rem;
+}
+
+.text-ellipsis {
+  text-overflow: ellipsis;
+}
+
+
+
+
+.image-container {
+  position: relative;
+  display: inline-block;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  transition: opacity 0.5s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 22px;
+  text-align: center;
+}
+
+.image-container:hover .overlay {
+  opacity: 1;
+  cursor: pointer;
+}
+
+.overlay::before {
+  content: "View All";
 }

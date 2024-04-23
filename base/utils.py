@@ -4,10 +4,6 @@ import os
 import re
 
 
-def extract_fb_video_id(url):
-    return re.search(r"videos\/(\d+)", url).group(1)
-
-
 def ThxMsg(user):
     html_template = f"""<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Thank You for Your Message</title><style>body {{font-family: 'Arial', sans-serif;background-color: #f4f4f4;margin: 0;padding: 0;}}.container {{max-width: 600px;margin: 20px auto;background-color: #fff;padding: 30px;border-radius: 10px;box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);}}.logo {{text-align: center;margin-bottom: 20px;}}.logo img {{max-width: 100px;height: auto;border-radius: 50%;}}.big-title {{font-size: 28px;color: #333;text-align: center;margin-bottom: 20px;font-weight: bold;}}.p {{color: #666;}}.signature {{margin-top: 20px;font-style: italic;color: #888;text-align: center;}}</style></head><body><div class="container"><div class="logo"><img src="https://d2nf2tnwikupdj.cloudfront.net/static/imgs/logo.png" alt="Ittihad Tahafuz Foundation Logo"></div><div class="big-title">Ittihad Tahafuz Foundation</div><p>Dear {user},</p><p>We have received your message and appreciate you reaching out to us. Our team will review your inquiry and get back to you as soon as possible.</p><p>Thank you for your patience and understanding.</p><div class="signature"><p>Best Regards,<br>Ittihad Tahafuz Foundation</p></div></div></body></html>"""
 

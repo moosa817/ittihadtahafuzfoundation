@@ -2,8 +2,8 @@ from django.shortcuts import render
 from django.http import JsonResponse
 
 from .forms import ContactForm
-from .utils import EmailTo, ThxMsg, generate_inquiry_email, extract_fb_video_id
-from .models import GalleryImages, VideoLinks
+from .utils import EmailTo, ThxMsg, generate_inquiry_email
+from .models import GalleryImages, VideoLinks, NoticeBoard
 from django.core.serializers import serialize
 import json
 
@@ -14,7 +14,9 @@ VIDEOS_COUNT = 8
 
 # Create your views here.
 def home(request):
-    return render(request, "index.html")
+    notices = NoticeBoard.objects.all()
+    context = {"notices": notices}
+    return render(request, "index.html", context)
 
 
 def about(request):
