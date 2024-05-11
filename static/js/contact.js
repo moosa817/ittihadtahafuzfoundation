@@ -24,7 +24,7 @@ $('#ContactForm').submit(function (e) {
             csrfmiddlewaretoken: csrfmiddlewaretoken
         },
         type: 'POST',
-        url: '/contact'
+        url: '/contact/'
     })
         .done(function (data) {
             $('#submit_main').removeAttr('disabled');
