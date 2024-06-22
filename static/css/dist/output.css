@@ -1135,6 +1135,11 @@ input:checked + .toggle-bg {
   margin-right: auto;
 }
 
+.mx-2 {
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+}
+
 .my-10 {
   margin-top: 2.5rem;
   margin-bottom: 2.5rem;
@@ -1163,11 +1168,6 @@ input:checked + .toggle-bg {
 .my-5 {
   margin-top: 1.25rem;
   margin-bottom: 1.25rem;
-}
-
-.mx-2 {
-  margin-left: 0.5rem;
-  margin-right: 0.5rem;
 }
 
 .my-3 {
@@ -1351,8 +1351,8 @@ input:checked + .toggle-bg {
   max-height: 100%;
 }
 
-.w-1\/2 {
-  width: 50%;
+.w-2\/3 {
+  width: 66.666667%;
 }
 
 .w-full {
@@ -1379,16 +1379,16 @@ input:checked + .toggle-bg {
   width: 300px;
 }
 
+.w-1\/2 {
+  width: 50%;
+}
+
 .w-64 {
   width: 16rem;
 }
 
 .w-72 {
   width: 18rem;
-}
-
-.w-\[45\%\] {
-  width: 45%;
 }
 
 .w-5 {
@@ -1405,10 +1405,6 @@ input:checked + .toggle-bg {
 
 .w-6 {
   width: 1.5rem;
-}
-
-.w-2\/3 {
-  width: 66.666667%;
 }
 
 .w-\[80\%\] {
@@ -1987,10 +1983,6 @@ input:checked + .toggle-bg {
   padding: 0.25rem;
 }
 
-.p-20 {
-  padding: 5rem;
-}
-
 .p-2\.5 {
   padding: 0.625rem;
 }
@@ -2107,19 +2099,14 @@ input:checked + .toggle-bg {
   font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
 
-.text-5xl {
-  font-size: 3rem;
-  line-height: 1;
-}
-
-.text-sm {
-  font-size: 0.875rem;
-  line-height: 1.25rem;
-}
-
 .text-xl {
   font-size: 1.25rem;
   line-height: 1.75rem;
+}
+
+.text-xs {
+  font-size: 0.75rem;
+  line-height: 1rem;
 }
 
 .text-4xl {
@@ -2137,13 +2124,18 @@ input:checked + .toggle-bg {
   line-height: 2rem;
 }
 
-.text-\[3rem\] {
+.text-5xl {
   font-size: 3rem;
+  line-height: 1;
 }
 
-.text-xs {
-  font-size: 0.75rem;
-  line-height: 1rem;
+.text-sm {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+
+.text-\[3rem\] {
+  font-size: 3rem;
 }
 
 .text-lg {
@@ -2153,6 +2145,15 @@ input:checked + .toggle-bg {
 
 .text-\[17px\] {
   font-size: 17px;
+}
+
+.text-base {
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+
+.text-\[12px\] {
+  font-size: 12px;
 }
 
 .font-extrabold {
@@ -2881,6 +2882,16 @@ input:checked + .toggle-bg {
     padding-right: 1rem;
   }
 
+  .sm\:px-8 {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+
+  .sm\:py-4 {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+
   .sm\:text-center {
     text-align: center;
   }
@@ -2892,6 +2903,11 @@ input:checked + .toggle-bg {
 
   .sm\:text-xl {
     font-size: 1.25rem;
+    line-height: 1.75rem;
+  }
+
+  .sm\:text-lg {
+    font-size: 1.125rem;
     line-height: 1.75rem;
   }
 }
@@ -2946,6 +2962,10 @@ input:checked + .toggle-bg {
     display: flex;
   }
 
+  .md\:w-1\/2 {
+    width: 50%;
+  }
+
   .md\:w-\[23\%\] {
     width: 23%;
   }
@@ -2964,10 +2984,6 @@ input:checked + .toggle-bg {
 
   .md\:w-1\/3 {
     width: 33.333333%;
-  }
-
-  .md\:w-1\/2 {
-    width: 50%;
   }
 
   .md\:grid-cols-2 {
@@ -3027,6 +3043,16 @@ input:checked + .toggle-bg {
     padding-right: 1rem;
   }
 
+  .md\:text-5xl {
+    font-size: 3rem;
+    line-height: 1;
+  }
+
+  .md\:text-sm {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+  }
+
   .md\:text-2xl {
     font-size: 1.5rem;
     line-height: 2rem;
@@ -3039,16 +3065,6 @@ input:checked + .toggle-bg {
   .md\:text-lg {
     font-size: 1.125rem;
     line-height: 1.75rem;
-  }
-
-  .md\:text-sm {
-    font-size: 0.875rem;
-    line-height: 1.25rem;
-  }
-
-  .md\:text-5xl {
-    font-size: 3rem;
-    line-height: 1;
   }
 
   .md\:font-medium {
