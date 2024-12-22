@@ -163,12 +163,3 @@ if DEBUG == False:
     STATICFILES_STORAGE = "charityproject.storage_backends.StaticStorage"
 else:
     STATIC_URL = "static/"
-
-# CUSTOM SECRETS
-
-EMAIL_SENDER = getenv("EMAIL_SENDER")
-MAIL_PWD = getenv("SMTP_PWD")
-MAIL_EMAIL_RECIVER = getenv("EMAIL_RECIEVER")
-MAIL_SERVER = getenv("MAIL_SERVER")
-MAIL_PORT = 587
-MAIL_USER = getenv("MAIL_USER")
